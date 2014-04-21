@@ -41,6 +41,9 @@ def verify(enemy, player):
         else
             return True, ""
     
+    if sum(map(lambda x: x % 1, player)) > 0:
+        return False, "Each side of your die must have an integer value."
+    
     if len(player) != len(enemy):
         return False, "You die must have the same number of sides as the opponent's."
     
