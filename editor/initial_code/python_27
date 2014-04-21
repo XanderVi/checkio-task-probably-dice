@@ -1,11 +1,20 @@
-def checkio(a, b):
-    """
-        sums two passed arguments
-    """
-    return None
+def checkio(enemy_die):
+    return []
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
+#These "asserts" are only used for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
-    assert checkio(3, 2) == 5
-    assert checkio(5, 7) == 12
-    print('Done')
+    def test_dice(enemy):
+        player = checkio(enemy)
+        total = 0
+        for p in player:
+            for e in enemy:
+                if p > e:
+                    total += 1
+                elif p < e:
+                    total -= 1
+        return total > 0
+
+    assert test_dice([3, 3, 3, 3, 6, 6])
+    assert test_dice([4, 4, 4, 4, 4, 4])
+    assert test_dice([1, 1, 1, 4])
+    assert checkio([1, 2, 3, 4, 5, 6]) == []
