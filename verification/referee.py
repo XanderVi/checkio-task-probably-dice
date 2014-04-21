@@ -34,16 +34,34 @@ from checkio.referees import checkers
 
 from tests import TESTS
 
+def verify(enemy, player):
+    if player == []:
+        if enemy[1]:
+            return False, "There are dice that can beat this one."
+        else
+            return True, ""
+    
+    total = 0
+    for p in player:
+        for e in enemy[0]:
+            if p < e:
+                total -= 1
+            elif p > e:
+                total += 1
+    
+    if total > 0:
+        if enemy[1]:
+            return True, ""
+        else
+            raise RuntimeError("The test data says this shouldn't be possible.")
+    elif total == 0:
+        return False, "This is only a tie. You need to find a die that can win."
+    else
+        return False, "This is a loss. You need to find a die that can win."
+
 api.add_listener(
     ON_CONNECT,
     CheckiOReferee(
         tests=TESTS,
-        cover_code={
-            'python-27': cover_codes.unwrap_args,  # or None
-            'python-3': cover_codes.unwrap_args
-        },
-        # checker=None,  # checkers.float.comparison(2)
-        # add_allowed_modules=[],
-        # add_close_builtins=[],
-        # remove_allowed_modules=[]
+        checker=verify
     ).on_ready)
