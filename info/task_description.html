@@ -11,11 +11,13 @@
 </p>
 
 <p>
-    <strong>Input: </strong> A sorted list of integers, one for each face of the opponent's die.
+    <strong>Input:</strong> 
+    A sorted list of integers, one for each face of the opponent's die.
 </p>
 
 <p>
-    <strong>Output: </strong> A list of integers, one for each face of your die. If no die satisfies the task requirements, return an empty list.
+    <strong>Output:</strong> 
+    A list of integers, one for each face of your die. If no die satisfies the task requirements, return an empty list.
 </p>
 
 <p>
@@ -28,6 +30,12 @@ checkio([1, 1, 1, 4]) = [1, 2, 2, 2]
 checkio([1, 2, 3, 4, 5, 6]) == [] # Any 6-sided die totaling 21 has a 50/50 chance of winning against the standard die.
 </pre>
 
-<strong>How it is used: </strong>
+<p>
+    <strong>How it is used:</strong>
     <i>This task illustrates some of the nonintutive results in probability. Many people would think that two dice as similar as those in the task description (same number of sides, same average roll) would have a roughly 50/50 chance against each other. Even more unsual is that sets of dice can be created where die A beats die B, die B beats die C and yet die C beats die A. These are called nontransitive dice.</i>
+</p>
+
+<p>
+    <strong>Preconditions:</strong>
+    3 &le; len(die) &le; 10, sum(die) &le; 50, min(die) > 0
 </p>
