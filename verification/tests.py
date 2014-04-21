@@ -12,71 +12,71 @@ TESTS = {
     "Basics": [
         {
             "input": [3, 3, 3, 3, 6, 6],
-            "answer": True
+            "answer": ([3, 3, 3, 3, 6, 6], True)
         },
         {
             "input": [4, 4, 4, 4, 4, 4],
-            "answer": True
+            "answer": ([4, 4, 4, 4, 4, 4], True)
         },
         {
             "input": [1, 1, 1, 4],
-            "answer": True
+            "answer": ([1, 1, 1, 4], True)
         },
         {
             "input": [1, 2, 3, 4, 5, 6],
-            "answer": False
+            "answer": ([1, 2, 3, 4, 5, 6], False)
         }
     ],
     "Small": [
         {
             "input": [1, 1, 1],
-            "answer": False
+            "answer": ([1, 1, 1], False)
         },
         {
             "input": [1, 1, 2],
-            "answer": False
+            "answer": ([1, 1, 2], False)
         },
         {
             "input": [1, 1, 3],
-            "answer": True
+            "answer": ([1, 1, 3], True)
         },
         {
             "input": [2, 2, 2],
-            "answer": False
+            "answer": ([2, 2, 2], False)
         },
         {
             "input": [3, 3, 3],
-            "answer": True
+            "answer": ([3, 3, 3], True)
         },
         {
             "input": [4, 4, 4],
-            "answer": True
+            "answer": ([4, 4, 4], True)
         }
     ]
     "Big": [
         {
             "input": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            "answer": False
+            "answer": ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], False)
         },
         {
             "input": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            "answer": False
+            "answer": ([1, 1, 1, 1, 1, 1, 1, 1, 1, 1], False)
         },
         {
             "input": [1, 1, 1, 2, 2, 2, 3, 3, 3, 4],
-            "answer": True
+            "answer": ([1, 1, 1, 2, 2, 2, 3, 3, 3, 4], True)
         },
         {
             "input": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
-            "answer": True
+            "answer": ([10, 10, 10, 10, 10, 10, 10, 10, 10, 10], True)
         },
         {
             "input": [1, 5, 5, 5, 5, 6, 6, 6, 6, 10],
-            "answer": True
+            "answer": ([1, 5, 5, 5, 5, 6, 6, 6, 6, 10], True)
         },
         {
             "input": [2, 4, 6, 8, 10, 12, 14, 16, 18],
-            "answer": False
+            "answer": ([2, 4, 6, 8, 10, 12, 14, 16, 18], False)
         }
     ]
 }
