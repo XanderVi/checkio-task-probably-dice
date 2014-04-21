@@ -41,6 +41,15 @@ def verify(enemy, player):
         else
             return True, ""
     
+    if len(player) != len(enemy):
+        return False, "You die must have the same number of sides as the opponent's."
+    
+    if sum(player) != sum(enemy):
+        return False, "Your die must have the same total as the opponent's."
+        
+    if min(player) <= 0:
+        return False, "Each side of your die must have a positive (greater than 0) number on it."
+    
     total = 0
     for p in player:
         for e in enemy[0]:
