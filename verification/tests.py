@@ -17,11 +17,11 @@ TESTS = {
         {
             "input": [4, 4, 4, 4, 4, 4],
             "answer": True
-        }
+        },
         {
             "input": [1, 1, 1, 4],
             "answer": True
-        }
+        },
         {
             "input": [1, 2, 3, 4, 5, 6],
             "answer": False
