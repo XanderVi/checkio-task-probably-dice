@@ -74,6 +74,6 @@ def verify(enemy, player):
 api.add_listener(
     ON_CONNECT,
     CheckiOReferee(
-        tests=TESTS
-        #checker=None
+        tests=TESTS,
+        checker=verify
     ).on_ready)
