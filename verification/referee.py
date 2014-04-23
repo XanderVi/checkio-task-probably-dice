@@ -38,7 +38,7 @@ def verify(enemy, player):
     if player == []:
         if enemy[1]:
             return False, "There are dice that can beat this one."
-        else
+        else:
             return True, ""
     
     if sum(map(lambda x: x % 1, player)) > 0:
@@ -64,11 +64,11 @@ def verify(enemy, player):
     if total > 0:
         if enemy[1]:
             return True, ""
-        else
+        else:
             raise RuntimeError("The test data says this shouldn't be possible.")
     elif total == 0:
         return False, "This is only a tie. You need to find a die that can win."
-    else
+    else:
         return False, "This is a loss. You need to find a die that can win."
 
 api.add_listener(
