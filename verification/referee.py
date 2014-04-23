@@ -37,21 +37,21 @@ from tests import TESTS
 def verify(enemy, player):
     if player == []:
         if enemy[1]:
-            return False, ("", "There are dice that can beat this one.")
+            return False, (player, "There are dice that can beat this one.")
         else:
-            return (True, "")
+            return True, (player, "")
 
     if sum(map(lambda x: x % 1, player)) > 0:
-        return False, ("", "Each side of your die must have an integer value.")
+        return False, (player, "Each side of your die must have an integer value.")
 
     if len(player) != len(enemy[0]):
-        return False, ("", "You die must have the same number of sides as the opponent's.")
+        return False, (player, "You die must have the same number of sides as the opponent's.")
 
     if sum(player) != sum(enemy[0]):
-        return False, ("", "Your die must have the same total as the opponent's.")
+        return False, (player, "Your die must have the same total as the opponent's.")
 
     if min(player) <= 0:
-        return False, ("", "Each side of your die must have a positive (greater than 0) number on it.")
+        return False, (player, "Each side of your die must have a positive (greater than 0) number on it.")
 
     total = 0
     for p in player:
@@ -63,13 +63,13 @@ def verify(enemy, player):
 
     if total > 0:
         if enemy[1]:
-            return True, ("", "")
+            return True, (player, "")
         else:
             raise RuntimeError("The test data says this shouldn't be possible.")
     elif total == 0:
-        return False, ("", "This is only a tie. You need to find a die that can win.")
+        return False, (player, "This is only a tie. You need to find a die that can win.")
     else:
-        return False, ("", "This is a loss. You need to find a die that can win.")
+        return False, (player, "This is a loss. You need to find a die that can win.")
 
 api.add_listener(
     ON_CONNECT,
