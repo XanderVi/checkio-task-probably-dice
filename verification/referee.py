@@ -40,19 +40,19 @@ def verify(enemy, player):
             return (False, "There are dice that can beat this one.")
         else:
             return (True, "")
-    
+
     if sum(map(lambda x: x % 1, player)) > 0:
         return (False, "Each side of your die must have an integer value.")
-    
-    if len(player) != len(enemy):
+
+    if len(player) != len(enemy[0]):
         return (False, "You die must have the same number of sides as the opponent's.")
-    
-    if sum(player) != sum(enemy):
+
+    if sum(player) != sum(enemy[0]):
         return (False, "Your die must have the same total as the opponent's.")
-        
+
     if min(player) <= 0:
         return (False, "Each side of your die must have a positive (greater than 0) number on it.")
-    
+
     total = 0
     for p in player:
         for e in enemy[0]:
@@ -60,7 +60,7 @@ def verify(enemy, player):
                 total -= 1
             elif p > e:
                 total += 1
-    
+
     if total > 0:
         if enemy[1]:
             return (True, "")
