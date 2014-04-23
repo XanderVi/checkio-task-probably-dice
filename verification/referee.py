@@ -35,6 +35,7 @@ from checkio.referees import checkers
 from tests import TESTS
 
 def verify(enemy, player):
+    print("Running verify(",enemy,",",player,")")
     if player == []:
         if enemy[1]:
             return False, "There are dice that can beat this one."
