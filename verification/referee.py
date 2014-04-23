@@ -75,5 +75,5 @@ api.add_listener(
     ON_CONNECT,
     CheckiOReferee(
         tests=TESTS,
-        checker=verify
+        checker=None
     ).on_ready)
