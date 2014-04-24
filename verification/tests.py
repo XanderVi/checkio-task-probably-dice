@@ -10,8 +10,8 @@ Each test is dict with
 TESTS = {
     "Basics": [
         {
-            "input": ([3, 3, 3, 3, 6, 6], True),
-            "answer": ([3, 3, 3, 3, 6, 6], True),
+            "input": [[3, 3, 3, 3, 6, 6], True],
+            "answer": [[3, 3, 3, 3, 6, 6], True]
         }
     ]}
 
