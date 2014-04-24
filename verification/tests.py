@@ -7,7 +7,15 @@ Each test is dict with
     "explanation" -- not necessary key, it's using for additional info in animation.
 """
 
+TESTS = {
+    "Basics": [
+        {
+            "input": ([3, 3, 3, 3, 6, 6], True),
+            "answer": ([3, 3, 3, 3, 6, 6], True),
+        }
+    ]}
 
+"""
 TESTS = {
     "Basics": [
         {
@@ -80,3 +88,4 @@ TESTS = {
         }
     ]
 }
+"""
