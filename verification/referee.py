@@ -35,6 +35,7 @@ from tests import TESTS
 def verify(enemy, player):
     if player == []:
         if enemy[1]:
+            print(player)
             return False, (player, "There are dice that can beat this one.")
         else:
             return True, (player, "")
