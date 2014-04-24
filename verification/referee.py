@@ -38,18 +38,20 @@ def verify(enemy, player):
             return False, (player, "There are dice that can beat this one.")
         else:
             return True, (player, "")
+    try:
+        if sum(map(lambda x: x % 1, player)) > 0:
+            return False, (player, "Each side of your die must have an integer value.")
 
-    if sum(map(lambda x: x % 1, player)) > 0:
-        return False, (player, "Each side of your die must have an integer value.")
+        if len(player) != len(enemy[0]):
+            return False, (player, "You die must have the same number of sides as the opponent's.")
 
-    if len(player) != len(enemy[0]):
-        return False, (player, "You die must have the same number of sides as the opponent's.")
+        if sum(player) != sum(enemy[0]):
+            return False, (player, "Your die must have the same total as the opponent's.")
 
-    if sum(player) != sum(enemy[0]):
-        return False, (player, "Your die must have the same total as the opponent's.")
-
-    if min(player) <= 0:
-        return False, (player, "Each side of your die must have a positive (greater than 0) number on it.")
+        if min(player) <= 0:
+            return False, (player, "Each side of your die must have a positive (greater than 0) number on it.")
+    except (TypeError, ValueError):
+        return False, (player, "Your die must be a single list of integers.")
 
     total = 0
     for p in player:
