@@ -48,8 +48,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                 $content.find('.output').addClass('error');
                 $content.find('.call').addClass('error');
                 $content.find('.answer').remove();
-                //$content.find('.explanation').remove();
-                $content.find('.explanation').html("Something something");
+                $content.find('.explanation').remove();
                 this_e.setAnimationHeight($content.height() + 60);
                 return false;
             }
@@ -67,8 +66,8 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
 
             if (!result) {
                 $content.find('.call').html('Fail: checkio(' + JSON.stringify(checkioInput) + ')');
-                $content.find('.answer').html('Right result:&nbsp;' + JSON.stringify(rightResult));
-                //$content.find('.answer').html(JSON.stringify(result_addon));
+                //$content.find('.answer').html('Right result:&nbsp;' + JSON.stringify(rightResult));
+                $content.find('.answer').html(JSON.stringify(result_addon));
                 $content.find('.answer').addClass('error');
                 $content.find('.output').addClass('error');
                 $content.find('.call').addClass('error');
@@ -80,7 +79,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             //Dont change the code before it
 
             //Your code here about test explanation animation
-            $content.find(".explanation").html("Something text for example");
+            //$content.find(".explanation").html("Something text for example");
             //
             //
             //
