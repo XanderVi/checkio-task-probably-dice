@@ -48,7 +48,8 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                 $content.find('.output').addClass('error');
                 $content.find('.call').addClass('error');
                 $content.find('.answer').remove();
-                $content.find('.explanation').remove();
+                //$content.find('.explanation').remove();
+                $content.find('.explanation').html("Something something");
                 this_e.setAnimationHeight($content.height() + 60);
                 return false;
             }
