@@ -54,6 +54,10 @@ TESTS = {
             "answer": ([2, 2, 2], False)
         },
         {
+            "input": [2, 3, 4],
+            "answer": ([2, 3, 4], True)
+        },
+        {
             "input": [3, 3, 3],
             "answer": ([3, 3, 3], True)
         },
