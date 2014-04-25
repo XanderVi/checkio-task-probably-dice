@@ -7,6 +7,8 @@ Each test is dict with
     "explanation" -- not necessary key, it's using for additional info in animation.
 """
 
+import random
+
 TESTS = {
     "Basics": [
         {
@@ -77,5 +79,12 @@ TESTS = {
             "input": [2, 4, 6, 8, 10, 12, 14, 16, 18],
             "answer": ([2, 4, 6, 8, 10, 12, 14, 16, 18], False)
         }
+    ],
+    "Random": [
     ]
 }
+
+for i in range(0,10):
+    sides = random.randint(3, 10)
+    die = list(sorted([random.randint(3, 10) for x in range(0, sides)]))
+    TESTS["Random"].append({"input": die, "answer": (die, True)})
