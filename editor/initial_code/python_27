@@ -1,5 +1,5 @@
 def checkio(enemy_die):
-    return []
+    return 0.0
 
 if __name__ == '__main__':
     #These are only used for self-checking and are not necessary for auto-testing
