@@ -38,7 +38,7 @@ addTest("Small", [2, 2, 4], 0.25000)
 addTest("Small", [2, 2, 5], 0.00000)
 addTest("Small", [1, 8, 3], 0.12500)
 
-addTest("Big", [10, 20, 10], 0.00000) # Too small to display with only 4 digits, but not 0
+addTest("Big", [10, 20, 10], 0.00000) # Too small to display with only 4 digits, but not actually 0
 addTest("Big", [10, 20, 47], 0.00010)
 addTest("Big", [10, 20, 48], 0.00013)
 addTest("Big", [10, 20, 49], 0.00016)
