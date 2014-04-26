@@ -39,5 +39,8 @@ api.add_listener(
     CheckiOReferee(
         tests=TESTS,
         checker=checkers.float_comparison(4),
-        cover_code=cover_codes.unwrap_args
-    ).on_ready)
+        cover_code={
+            'python-27': cover_codes.unwrap_args,
+            'python-3': cover_codes.unwrap_args
+        }
+        ).on_ready)
