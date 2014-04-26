@@ -10,93 +10,45 @@ Each test is dict with
 import random
 
 TESTS = {
-    "Basics": [
-        {
-            "input": [3, 3, 3, 3, 6, 6],
-            "answer": ([3, 3, 3, 3, 6, 6], True)
-        },
-        {
-            "input": [4, 4, 4, 4, 4, 4],
-            "answer": ([4, 4, 4, 4, 4, 4], True)
-        },
-        {
-            "input": [2, 2, 5, 5, 5, 5],
-            "answer": ([2, 2, 5, 5, 5, 5], True)
-        },
-        {
-            "input": [1, 1, 1, 4],
-            "answer": ([1, 1, 1, 4], True)
-        },
-        {
-            "input": [1, 2, 3, 4, 5, 6],
-            "answer": ([1, 2, 3, 4, 5, 6], False)
-        },
-        {
-            "input": [2, 3, 4, 5, 6, 7],
-            "answer": ([2, 3, 4, 5, 6, 7], True)
-        }
-    ],
-    "Small": [
-        {
-            "input": [1, 1, 1],
-            "answer": ([1, 1, 1], False)
-        },
-        {
-            "input": [1, 1, 2],
-            "answer": ([1, 1, 2], False)
-        },
-        {
-            "input": [1, 1, 3],
-            "answer": ([1, 1, 3], True)
-        },
-        {
-            "input": [2, 2, 2],
-            "answer": ([2, 2, 2], False)
-        },
-        {
-            "input": [2, 3, 4],
-            "answer": ([2, 3, 4], True)
-        },
-        {
-            "input": [3, 3, 3],
-            "answer": ([3, 3, 3], True)
-        },
-        {
-            "input": [4, 4, 4],
-            "answer": ([4, 4, 4], True)
-        }
-    ],
-    "Big": [
-        {
-            "input": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            "answer": ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], False)
-        },
-        {
-            "input": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            "answer": ([1, 1, 1, 1, 1, 1, 1, 1, 1, 1], False)
-        },
-        {
-            "input": [1, 1, 1, 2, 2, 2, 3, 3, 3, 4],
-            "answer": ([1, 1, 1, 2, 2, 2, 3, 3, 3, 4], True)
-        },
-        {
-            "input": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
-            "answer": ([10, 10, 10, 10, 10, 10, 10, 10, 10, 10], True)
-        },
-        {
-            "input": [1, 5, 5, 5, 5, 6, 6, 6, 6, 10],
-            "answer": ([1, 5, 5, 5, 5, 6, 6, 6, 6, 10], True)
-        },
-        {
-            "input": [2, 4, 6, 8, 10, 12, 14, 16, 18],
-            "answer": ([2, 4, 6, 8, 10, 12, 14, 16, 18], False)
-        }
-    ],
-    "Random": [
-    ]
+    "Basics": [],
+    "Small": [],
+    "Big": []
 }
 
-for i in range(0,10):
-    sides = random.randint(3, 10)
-    die = list(sorted([random.randint(3, 10) for x in range(0, sides)]))
-    TESTS["Random"].append({"input": die, "answer": (die, True)})
+def addTest(c, i, a):
+    TESTS[c].append({"input": i, "answer": a})
+
+addTest("Basics", [2, 6, 3], 0.05556)
+addTest("Basics", [2, 6, 4], 0.08333)
+addTest("Basics", [2, 6, 7], 0.16667)
+addTest("Basics", [2, 3, 5], 0.22222)
+addTest("Basics", [2, 3, 7], 0.00000)
+addTest("Basics", [3, 6, 7], 0.06944)
+addTest("Basics", [10, 10, 50], 0.03749)
+
+addTest("Small", [1, 2, -1], 0.00000)
+addTest("Small", [1, 2, 0], 0.00000)
+addTest("Small", [1, 2, 1], 0.50000)
+addTest("Small", [1, 2, 2], 0.50000)
+addTest("Small", [1, 2, 3], 0.00000)
+addTest("Small", [2, 2, 1], 0.00000)
+addTest("Small", [2, 2, 2], 0.25000)
+addTest("Small", [2, 2, 3], 0.50000)
+addTest("Small", [2, 2, 4], 0.25000)
+addTest("Small", [2, 2, 5], 0.00000)
+addTest("Small", [1, 8, 3], 0.12500)
+
+addTest("Big", [10, 20, 10], 0.00000) # Too small to display with only 4 digits, but not 0
+addTest("Big", [10, 20, 47], 0.00010)
+addTest("Big", [10, 20, 48], 0.00013)
+addTest("Big", [10, 20, 49], 0.00016)
+addTest("Big", [10, 20, 114], 0.01921)
+addTest("Big", [10, 20, 115], 0.01870)
+addTest("Big", [10, 20, 116], 0.01815)
+addTest("Big", [9, 19, 47], 0.00075)
+addTest("Big", [9, 19, 48], 0.00089)
+addTest("Big", [9, 19, 89], 0.02384)
+addTest("Big", [9, 19, 90], 0.02387)
+addTest("Big", [9, 19, 91], 0.02384)
+addTest("Big", [9, 19, 141], 0.00015)
+addTest("Big", [9, 19, 142], 0.00012)
