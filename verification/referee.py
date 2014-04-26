@@ -65,7 +65,7 @@ def verify(enemy, player):
         if enemy[1]:
             return True, ""
         else:
-            raise RuntimeError("The test data says this shouldn't be possible.")
+            return False, "The test data says this shouldn't be possible. Please let us know so we can correct our tests."
     elif total == 0:
         return False, "This is only a tie. You need to find a die that can win."
     else:
