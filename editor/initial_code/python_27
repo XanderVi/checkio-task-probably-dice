@@ -1,8 +1,8 @@
 def checkio(enemy_die):
     return []
 
-#These "asserts" are only used for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
+    #These are only used for self-checking and not necessary for auto-testing
     def test_dice(enemy):
         player = checkio(enemy)
         total = 0
