@@ -29,6 +29,8 @@ checkio.referee.cover_codes
 from checkio.signals import ON_CONNECT
 from checkio import api
 from checkio.referees.io import CheckiOReferee
+from checkio.referees import checkers
+from checkio.referees import cover_codes
 
 from tests import TESTS
 
@@ -36,6 +38,6 @@ api.add_listener(
     ON_CONNECT,
     CheckiOReferee(
         tests=TESTS,
-        checker=checkio.referee.checkers.float_comparison(4),
-        cover_code=checkio.referee.cover_codes.unwrap_args
+        checker=checkers.float_comparison(4),
+        cover_code=cover_codes.unwrap_args
     ).on_ready)
