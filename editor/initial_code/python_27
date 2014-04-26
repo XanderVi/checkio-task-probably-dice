@@ -1,4 +1,4 @@
-def checkio(enemy_die):
+def checkio(n, s, t):
     return 0.0
 
 if __name__ == '__main__':
