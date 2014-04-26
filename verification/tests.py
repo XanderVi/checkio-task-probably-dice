@@ -13,7 +13,7 @@ TESTS = {
     "Basics": [
         {
             "input": [3, 3, 3, 3, 6, 6],
-            "answer": ([3, 3, 3, 3, 6, 6], True)
+            "answer": ([3, 3, 3, 3, 6, 6], False) # Testing data error
         },
         {
             "input": [4, 4, 4, 4, 4, 4],
