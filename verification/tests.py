@@ -26,7 +26,7 @@ addTest("Basics", [2, 3, 7], 0.00000)
 addTest("Basics", [3, 6, 7], 0.06944)
 addTest("Basics", [10, 10, 50], 0.03749)
 
-addTest("Small", [1, 2, -1], 0.00000)
+addTest("Small", [1, 2, 999], 0.00000)
 addTest("Small", [1, 2, 0], 0.00000)
 addTest("Small", [1, 2, 1], 0.50000)
 addTest("Small", [1, 2, 2], 0.50000)

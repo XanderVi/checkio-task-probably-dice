@@ -6,10 +6,11 @@
 <p>
     The most common way to use multiple dice is to simply roll them all and add up all the results.
     To get started with your investigation of dice, write a function that takes the number of dice,
-    the number of sides per die and a target number and returns the probability (to 4 decimal places)
-    of getting a total roll of exactly the target value.
+    the number of sides per die and a target number and
+    returns the probability of getting a total roll of exactly the target value.
+    The result should be given with four digits precision as &plusmn;0.0001.
     For example, if you roll 2 six-sided dice, the probability of getting exactly a 3 is 2/36 or 5.56%,
-    which you should return as 0.0556.
+    which you should return as &asymp;0.0556.
 </p>
 
 <p>
@@ -19,28 +20,26 @@
 </p>
 
 <p>
-    <strong>Input:</strong> 
-    Three integers: the number of dice <strong>N</strong>,
-    the number of sides per die <strong>S</strong> and the target number <strong>T</strong>.
+    <strong>Input:</strong>
+    Three arguments. The number of dice, the number of sides per die and the target number as integers.
 </p>
 
 <p>
     <strong>Output:</strong> 
-    The probability of getting exactly <strong>T</strong> on a single roll of <strong>N</strong>
-    <strong>S</strong>-sided dice, to four decimal places.
+    The probability of getting exactly target number on a single roll of given dice as a float.
 </p>
 
 <p>
     <strong>Example:</strong>
 </p>
 <pre class="brush: python">
-checkio(2, 6, 3) == 0.0556  # 2 six-sided dice have a 5.56% chance of totalling 3
-checkio(2, 6, 4) == 0.0833 
-checkio(2, 6, 7) == 0.1667
-checkio(2, 3, 5) == 0.2222  # 2 three-sided dice have a 22.22% chance of totalling 5
-checkio(2, 3, 7) == 0       # The maximum you can roll on 2 three-sided dice is 6
-checkio(3, 6, 7) == 0.0694
-checkio(10, 10, 50) == 0.0375
+probability(2, 6, 3) == 0.0556  # 2 six-sided dice have a 5.56% chance of totalling 3
+probability(2, 6, 4) == 0.0833
+probability(2, 6, 7) == 0.1667
+probability(2, 3, 5) == 0.2222  # 2 three-sided dice have a 22.22% chance of totalling 5
+probability(2, 3, 7) == 0       # The maximum you can roll on 2 three-sided dice is 6
+probability(3, 6, 7) == 0.0694
+probability(10, 10, 50) == 0.0375
 </pre>
 
 <p class="for_info_only">
@@ -52,6 +51,8 @@ checkio(10, 10, 50) == 0.0375
 
 <p>
     <strong>Preconditions:</strong><br/>
-    1 &le; <strong>N</strong> &le; 10<br/>
-    2 &le; <strong>S</strong> &le; 20
+    1 &le; <strong>dice_number</strong> &le; 10<br/>
+    2 &le; <strong>sides</strong> &le; 20<br/>
+    0 &le; <strong>target</strong> &lt; 1000
+
 </p>
