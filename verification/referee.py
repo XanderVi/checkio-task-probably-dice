@@ -42,5 +42,6 @@ api.add_listener(
         cover_code={
             'python-27': cover_codes.unwrap_args,
             'python-3': cover_codes.unwrap_args
-        }
+        },
+        function_name="probability"
         ).on_ready)
