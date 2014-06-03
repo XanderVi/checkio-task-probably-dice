@@ -1,6 +1,6 @@
-checkio-task-unfair-dice
+checkio-task-probably-dice
 ========================
 
-Checkio Task "Unfair Dice"
+Checkio Task "Probably Dice"
 
 
