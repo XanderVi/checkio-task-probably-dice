@@ -41,6 +41,8 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
 
             var funcName = "probability";
 
+            var default_in = [2, 6, 3];
+
             var checkioInput = data.in || default_in;
             var checkioInputStr = funcName + '(' + JSON.stringify(checkioInput[0]) + "," +
                 JSON.stringify(checkioInput[1]) + "," + JSON.stringify(checkioInput[2]) + ')';
@@ -88,12 +90,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                 $content.find('.call').html('Pass: ' + checkioInputStr);
                 $content.find('.answer').remove();
             }
-            //Dont change the code before it
 
-            if (explanation) {
-                var canvas = new SocialNetwork();
-                canvas.draw($content.find(".explanation")[0], explanation, checkioInput[0], checkioInput[1], checkioInput[2]);
-            }
 
 
             this_e.setAnimationHeight($content.height() + 60);
