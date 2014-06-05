@@ -68,7 +68,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                 return false;
             }
 
-            var rightResult = data.ext["answer"];
+            var rightResult = data.ext["show"];
             var userResult = data.out;
             var result = data.ext["result"];
             var result_addon = data.ext["result_addon"];
@@ -91,7 +91,11 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                 $content.find('.answer').remove();
             }
 
+            if (explanation) {
+                var canvas = new Distribution($content.find(".explanation")[0]);
+                canvas.draw(explanation, checkioInput[2]);
 
+            }
 
             this_e.setAnimationHeight($content.height() + 60);
 
@@ -113,27 +117,57 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
 //            });
 //        });
 
-        var colorOrange4 = "#F0801A";
-        var colorOrange3 = "#FA8F00";
-        var colorOrange2 = "#FAA600";
-        var colorOrange1 = "#FABA00";
+        function Distribution(dom, options) {
+            var colorOrange4 = "#F0801A";
+            var colorOrange3 = "#FA8F00";
+            var colorOrange2 = "#FAA600";
+            var colorOrange1 = "#FABA00";
 
-        var colorBlue4 = "#294270";
-        var colorBlue3 = "#006CA9";
-        var colorBlue2 = "#65A1CF";
-        var colorBlue1 = "#8FC7ED";
+            var colorBlue4 = "#294270";
+            var colorBlue3 = "#006CA9";
+            var colorBlue2 = "#65A1CF";
+            var colorBlue1 = "#8FC7ED";
 
-        var colorGrey4 = "#737370";
-        var colorGrey3 = "#9D9E9E";
-        var colorGrey2 = "#C5C6C6";
-        var colorGrey1 = "#EBEDED";
+            var colorGrey4 = "#737370";
+            var colorGrey3 = "#9D9E9E";
+            var colorGrey2 = "#C5C6C6";
+            var colorGrey1 = "#EBEDED";
 
-        var colorWhite = "#FFFFFF";
-        //Your Additional functions or objects inside scope
-        //
-        //
-        //
+            var colorWhite = "#FFFFFF";
 
+            options = options || {};
+            var format = Raphael.format;
+
+            var padding = options.padding || 10;
+
+            var unit;
+
+            var space = 300;
+            var tail = 30;
+
+            var sizeX = padding * 2 + space + tail;
+            var sizeY = padding * 2 + space;
+
+            var paper = Raphael(dom, sizeX, sizeY);
+
+            var attrAxis = {"stroke": colorBlue4, "stroke-width": 3, "arrow-end": "classic"};
+            var attrBar = {"fill": colorBlue1, "stroke": colorBlue4, "stroke-width": 1};
+
+            this.draw = function(distribution, target) {
+                unit = space / distribution.length;
+                var w = unit * 0.8;
+                paper.path(format("M{0},{1}H{2}", padding, sizeY - padding, sizeX - padding)).attr(attrAxis);
+                paper.path(format("M{0},{1}V{2}", padding, sizeY - padding, padding)).attr(attrAxis);
+                for (var i = 1; i < distribution.length; i++) {
+                    var r = paper.rect(padding + i * unit - w / 2, sizeY - padding - distribution[i], w, distribution[i]).attr(attrBar).toBack();
+                    if (i === target) {
+                        r.attr({"stroke": colorOrange4, "fill": colorOrange2});
+
+                    }
+                }
+            }
+        }
 
     }
-);
+)
+;
