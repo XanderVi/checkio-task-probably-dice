@@ -40,8 +40,11 @@ api.add_listener(
         tests=TESTS,
         checker=checkers.float_comparison(4),
         cover_code={
-            'python-27': cover_codes.unwrap_args,
+            'js-node': cover_codes.js_unwrap_args,
             'python-3': cover_codes.unwrap_args
         },
-        function_name="probability"
+        function_name={
+            "python": "probability",
+            "js": "probability"
+        }
         ).on_ready)

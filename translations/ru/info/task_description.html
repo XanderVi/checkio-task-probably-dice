@@ -50,18 +50,30 @@
     Вероятность получения заданного значения за один бросок игральных костей, как число с плавающей запятой.
 </p>
 
+<div class="for_info_only">
 <p>
     <strong>Пример:</strong>
 </p>
-<pre class="brush: python">
-probability(2, 6, 3) == 0.0556  # на 2-х шестигранных кубиках вероятность выпадения 3 равна  5.56% 
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">
+probability(2, 6, 3) == 0.0556  # 2 six-sided dice have a 5.56% chance of totalling 3
 probability(2, 6, 4) == 0.0833
 probability(2, 6, 7) == 0.1667
-probability(2, 3, 5) == 0.2222  # на 2-х трехгранных  кубиках вероятность выпадения 5 равна  22.22%
-probability(2, 3, 7) == 0       # на 2-х трехгранных  кубиках вы можете выкинуть максимум 6 (3;3)
+probability(2, 3, 5) == 0.2222  # 2 three-sided dice have a 22.22% chance of totalling 5
+probability(2, 3, 7) == 0       # The maximum you can roll on 2 three-sided dice is 6
 probability(3, 6, 7) == 0.0694
-probability(10, 10, 50) == 0.0375
-</pre>
+probability(10, 10, 50) == 0.0375</pre>
+{% else %}
+<pre class="brush: python">
+probability(2, 6, 3) == 0.0556  # 2 six-sided dice have a 5.56% chance of totalling 3
+probability(2, 6, 4) == 0.0833
+probability(2, 6, 7) == 0.1667
+probability(2, 3, 5) == 0.2222  # 2 three-sided dice have a 22.22% chance of totalling 5
+probability(2, 3, 7) == 0       # The maximum you can roll on 2 three-sided dice is 6
+probability(3, 6, 7) == 0.0694
+probability(10, 10, 50) == 0.0375</pre>
+{% endif %}
+</div>
 
 <p class="for_info_only">
     <strong>Как это используется:</strong>

@@ -1,0 +1,32 @@
+"use strict";
+
+function probability(dice_number, sides, target) {
+    // your code here
+    return 0;
+}
+
+var assert = require('assert');
+if (!global.is_checking) {
+    // These "asserts" are used for self-checking and not for an auto-testing
+    function almost_equal(checked, correct, significant_digits=4) {
+        var precision = 0.1 ** significant_digits
+        return correct - precision < checked && checked < correct + precision
+    }
+    
+    var test_1 = almost_equal(probability(2, 6, 3), 0.0556)
+    var test_2 = almost_equal(probability(2, 6, 4), 0.0833)
+    var test_3 = almost_equal(probability(2, 6, 7), 0.1667)
+    var test_4 = almost_equal(probability(2, 3, 5), 0.2222)
+    var test_5 = almost_equal(probability(2, 3, 7), 0.0000)
+    var test_6 = almost_equal(probability(3, 6, 7), 0.0694)
+    var test_7 = almost_equal(probability(10, 10, 50), 0.0375)
+    
+    assert(test_1, true)
+    assert(test_2, true)
+    assert(test_3, true)
+    assert(test_4, true)
+    assert(test_5, true)
+    assert(test_6, true)
+    assert(test_7, true)
+    console.log("Coding complete? Click 'Check' to earn cool rewards!");
+}
